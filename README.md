@@ -10,11 +10,23 @@ A simple image editor.
 
 ## Clone, Build, and Run
 
+Clone into tloimageeditor directory.
+
 ```
-$ git clone --branch develop <url/to/tloimageeditor.git> # clone into tloimageeditor directory
+$ git clone --branch develop <url/to/tloimageeditor.git>
+```
+
+Build.
+
+```
 $ mkdir tloimageeditorbuild
 $ cd tloimageeditorbuild
 $ cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug ../tloimageeditor
 $ make
+```
+
+Run.
+
+```
 $ ./tloimageeditor
 ```
