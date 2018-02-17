@@ -28,5 +28,5 @@ $ make
 Run.
 
 ```
-$ ./tloimageeditor
+$ ./src/tloimageeditor
 ```

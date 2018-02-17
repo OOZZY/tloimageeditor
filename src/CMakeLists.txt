@@ -1,0 +1,16 @@
+macro(prepend listVar prefix)
+   set(${listVar} "")
+   foreach(item ${ARGN})
+      list(APPEND ${listVar} ${prefix}${item})
+   endforeach(item)
+endmacro(prepend)
+
+set(tloimageeditor_core_headers imageeditormodel.hpp imageeditorview.hpp)
+set(tloimageeditor_core_sources imageeditormodel.cpp imageeditorview.cpp)
+prepend(tloimageeditor_core_headers tlo/ ${tloimageeditor_core_headers})
+add_library(tloimageeditor_core STATIC ${tloimageeditor_core_headers} ${tloimageeditor_core_sources})
+target_include_directories(tloimageeditor_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(tloimageeditor_core PUBLIC Qt5::Widgets)
+
+add_executable(tloimageeditor tloimageeditor.cpp)
+target_link_libraries(tloimageeditor PRIVATE tloimageeditor_core)
